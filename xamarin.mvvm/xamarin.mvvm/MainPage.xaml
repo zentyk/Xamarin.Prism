@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamarin.mvvm.MainPage">
+    <StackLayout>
+        <!--Binding-->
+        <Label FontSize="Large" Rotation="{Binding Source={x:Reference SliderRotation}, Path=Value}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Text="Xamarin"/>
+        <Slider x:Name="SliderRotation" Maximum="360"></Slider>
+
+        <!--Binding Modes-->
+        <Entry Placeholder="Source" x:Name="EntSource"/>
+        <Entry Placeholder="Target" Text="{Binding Source={x:Reference EntSource}, Path=Text, Mode=TwoWay}"></Entry>
+
+        <!--Commands-->
+        <Entry Placeholder="username" Text="{Binding UserName}"></Entry>
+        <Label Text="{Binding UserName}"></Label>
+        <Button Text="Login" Command="{Binding LoginCommand}"></Button>
+    </StackLayout>
+</ContentPage>
