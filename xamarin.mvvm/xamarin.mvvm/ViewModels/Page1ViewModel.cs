@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace xamarin.mvvm.ViewModels
-{
+﻿namespace xamarin.mvvm.ViewModels {
     public class Page1ViewModel {
         private string _loginUser;
 
@@ -12,9 +7,7 @@ namespace xamarin.mvvm.ViewModels
             set { _loginUser = value; }
         }
 
-
-        public Page1ViewModel(string username)
-        {
+        public Page1ViewModel(string username) {
             _loginUser = username;
 
         }

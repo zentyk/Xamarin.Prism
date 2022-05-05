@@ -1,6 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using System.Diagnostics;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -10,19 +8,21 @@ using xamarin.mvvm.Pages;
 namespace xamarin.mvvm.ViewModels {
     public class MainViewModel : INotifyPropertyChanged {
         public ICommand LoginCommand { get; set; }
+
         private string _userName;
+        private string firstName = "Qenia";
+        private string lastName = "Albares";
+
         private INavigation _navigation;
 
-        public string UserName
-        {
+        public string UserName {
             get { return _userName; }
-            set
-            {
-                _userName = value;
-                OnPropertyChanged("UserName");
+            set {
+                //_userName = value;
+                _userName = firstName +" "+ lastName;
+                //OnPropertyChanged("UserName");
             }
         }
-
 
         public MainViewModel(INavigation navigation) {
             LoginCommand = new Command(Login);
